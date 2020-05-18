@@ -1,5 +1,5 @@
 #!/bin/bash
-statesArray=("AndhraPradhesh" "ArunachalPradesh" "Assam" "Bihar" "Chattisgarh" "Goa" "Gujarat" "Haryana" "HimachalPradesh" "JammuAndKashmir" "Jharkhand" "Karnataka" "Kerala" "Ladakh" "MadhyaPradesh" "Maharashtra" "Manipur" "Meghalaya" "Mizoram" "Nagaland" "Odisha" "Punjab" "Rajasthan" "Sikkim" "TamilNadu" "Telangana" "Tripura" "UttarPradesh" "Uttarakhand" "WestBengal")
+statesArray=("AndhraPradesh" "ArunachalPradesh" "Assam" "Bihar" "Chattisgarh" "Goa" "Gujarat" "Haryana" "HimachalPradesh" "JammuAndKashmir" "Jharkhand" "Karnataka" "Kerala" "Ladakh" "MadhyaPradesh" "Maharashtra" "Manipur" "Meghalaya" "Mizoram" "Nagaland" "Odisha" "Punjab" "Rajasthan" "Sikkim" "TamilNadu" "Telangana" "Tripura" "UttarPradesh" "Uttarakhand" "WestBengal")
 unionArray=(AndamanAndNicobar Chandigarh Delhi DamanAndDiu Lakshadeep Pondicherry)
 declare -A states
 states["Maharashtra"]=1
@@ -10,7 +10,7 @@ states["Rajasthan"]=5
 states["MadhyaPradesh"]=6
 states["UttarPradesh"]=7
 states["WestBengal"]=8
-states["AndhraPradhesh"]=9
+states["AndhraPradesh"]=9
 states["Punjab"]=10
 states["Telangana"]=11
 states["Bihar"]=12
@@ -40,7 +40,8 @@ states["Lakshadweep"]=35
 states["Sikkim"]=36
 
 if [ -z $1 ];then
-echo "
+echo "      COVID19 India
+-----------------------------
 Usage:
     covid19 <command>
     covid19 <options>
@@ -74,7 +75,7 @@ elif [ $1 = '-s' ];then
 echo "
     States
 --------------
-AndhraPradhesh
+AndhraPradesh
 ArunachalPradesh
 Assam
 Bihar
@@ -119,9 +120,8 @@ Note: Dadra and Nagar Haveli cases are combined with DamanAndDiu
 "
 
 elif [ $1 = '-h' ];then
-    echo "
-    COVID19 India
-
+    echo "      COVID19 India
+-----------------------------
 Usage:
     covid19 <command>
     covid19 <options>
@@ -133,7 +133,6 @@ Options:
     -v              Gives the version
     -h              Help
     -s              Gives all the state names
-    -a              Gives the data for all the states
     -u              Gives all the Union Territory names
 "
 else
