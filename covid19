@@ -1,0 +1,181 @@
+#!/bin/bash
+statesArray=("AndhraPradhesh" "ArunachalPradesh" "Assam" "Bihar" "Chattisgarh" "Goa" "Gujarat" "Haryana" "HimachalPradesh" "JammuAndKashmir" "Jharkhand" "Karnataka" "Kerala" "Ladakh" "MadhyaPradesh" "Maharashtra" "Manipur" "Meghalaya" "Mizoram" "Nagaland" "Odisha" "Punjab" "Rajasthan" "Sikkim" "TamilNadu" "Telangana" "Tripura" "UttarPradesh" "Uttarakhand" "WestBengal")
+unionArray=(AndamanAndNicobar Chandigarh Delhi DamanAndDiu Lakshadeep Pondicherry)
+declare -A states
+states["Maharashtra"]=1
+states["TamilNadu"]=2
+states["Gujarat"]=3
+states["Delhi"]=4
+states["Rajasthan"]=5
+states["MadhyaPradesh"]=6
+states["UttarPradesh"]=7
+states["WestBengal"]=8
+states["AndhraPradhesh"]=9
+states["Punjab"]=10
+states["Telangana"]=11
+states["Bihar"]=12
+states["JammuAndKashmir"]=13
+states["Karnataka"]=14
+states["Haryana"]=15
+states["Odisha"]=16
+states["Kerala"]=17
+states["Jharkhand"]=18
+states["Chandigarh"]=19
+states["Tripura"]=20
+states["Assam"]=21
+states["Uttarakhand"]=22
+states["HimachalPradesh"]=23
+states["Chattisgarh"]=24
+states["Ladakh"]=25
+states["AndamanAndNicobar"]=26
+states["Goa"]=27
+states["Puducherry"]=28
+states["Meghalaya"]=29
+states["Manipur"]=30
+states["Mizoram"]=31
+states["ArunachalPradesh"]=32
+states["DamanAndDiu"]=33
+states["Nagaland"]=34
+states["Lakshadweep"]=35
+states["Sikkim"]=36
+
+if [ -z $1 ];then
+echo "
+Usage:
+    covid19 <command>
+    covid19 <options>
+Commands:
+    India           Retrieve the cases of INDIA    
+    StateName       Retrieve the cases of particular state
+Options:
+    -v              Give the version
+    -h              Help
+    -s              Give all the state names
+"
+elif [ $1 = 'India' ]; then
+    vardata=$(curl --silent https://api.covid19india.org/data.json)
+    active=$(echo "${vardata}" | jq '.statewise[0].active')
+    confirmed=$(echo "${vardata}" | jq '.statewise[0].confirmed')
+    deaths=$(echo "${vardata}" | jq '.statewise[0].deaths')
+    recovered=$(echo "${vardata}" | jq '.statewise[0].recovered')
+    delta=$(echo "${vardata}" | jq '.statewise[0].deltaconfirmed')
+    echo "    
+    COVID-19 INDIA
+----------------------
+Active Cases = ${active//\"}
+Confirmed Cases = ${confirmed//\"}
+Increase (Daily) = ${delta//\"}
+Deaths = ${deaths//\"}
+Recovered = ${recovered//\"}
+"
+elif [ $1 = '-v' ];then
+echo "Covid19 version 1.0"
+elif [ $1 = '-s' ];then
+echo "
+    States
+--------------
+AndhraPradhesh
+ArunachalPradesh
+Assam
+Bihar
+Chattisgarh
+Goa
+Gujarat
+Haryana
+HimachalPradesh
+JammuAndKashmir
+Jharkhand
+Karnataka
+Kerala
+Ladakh
+MadhyaPradesh
+Maharashtra
+Manipur
+Meghalaya
+Mizoram
+Nagaland
+Odisha
+Punjab
+Rajasthan
+Sikkim
+TamilNadu
+Telangana
+Tripura
+UttarPradesh
+Uttarakhand
+WestBengal
+"
+elif [ $1 = '-u' ];then
+echo "
+    Union Territories
+-------------------------
+AndamanAndNicobar
+Chandigarh
+Delhi
+DamanAndDiu 
+Lakshadeep
+Pondicherry
+Note: Dadra and Nagar Haveli cases are combined with DamanAndDiu
+"
+
+elif [ $1 = '-h' ];then
+    echo "
+    COVID19 India
+
+Usage:
+    covid19 <command>
+    covid19 <options>
+Commands:
+    India           Retrieve the cases of INDIA
+    StateName       Retrieve the cases of particular state
+    UnionTeritory   Retrieve the cases of particular Teritory
+Options:
+    -v              Gives the version
+    -h              Help
+    -s              Gives all the state names
+    -a              Gives the data for all the states
+    -u              Gives all the Union Territory names
+"
+else
+    state=$1
+    f=0
+    for i in ${statesArray[*]}
+    do
+        if [ $i = $state ];then 
+            f=1
+            break
+        fi
+    done
+    for i in ${unionArray[*]}
+    do 
+        if [ $i = $state ];then 
+            f=1
+            break
+        fi
+    done
+    if [ $f == 1 ];then
+    stateNo=${states[$1]}
+    vardata=$(curl --silent https://api.covid19india.org/data.json)
+    state=$(echo "${vardata}" | jq '.statewise['$stateNo'].state')
+    active=$(echo "${vardata}" | jq '.statewise['$stateNo'].active')
+    confirmed=$(echo "${vardata}" | jq '.statewise['$stateNo'].confirmed')
+    deaths=$(echo "${vardata}" | jq '.statewise['$stateNo'].deaths')
+    recovered=$(echo "${vardata}" | jq '.statewise['$stateNo'].recovered')
+    delta=$(echo "${vardata}" | jq '.statewise['$stateNo'].deltaconfirmed')
+    echo "    
+    COVID-19 INDIA
+-----------------------
+State             = ${state//\"}
+Active Cases      = ${active//\"}
+Confirmed Cases   = ${confirmed//\"}
+Increase (Daily)  = ${delta//\"}
+Deaths            = ${deaths//\"}
+Recovered         = ${recovered//\"}
+"
+else
+    echo "
+Invalid State or UnionTerritory
+Please check for -s and -u for the accurate names you need to enter
+"
+fi    
+fi
