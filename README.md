@@ -1,5 +1,5 @@
 # covid19-shell-script
-    This helps you to use the command <b>covid19</b> in your device with LINUX OS
+    This helps you to use the command covid19 in your device with LINUX OS
 ### Procedure
 
     step1: git clone https://github.com/saisrinivaspaila/covid19-shell-script.git
