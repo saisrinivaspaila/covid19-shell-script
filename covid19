@@ -52,6 +52,7 @@ Options:
     -v              Give the version
     -h              Help
     -s              Give all the state names
+    -u              Gives all the Union Territory names
 "
 elif [ $1 = 'India' ]; then
     vardata=$(curl --silent https://api.covid19india.org/data.json)
