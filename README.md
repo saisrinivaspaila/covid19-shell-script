@@ -3,8 +3,9 @@
 ### Procedure
 
     step1: git clone https://github.com/saisrinivaspaila/covid19-shell-script.git
-    step2: Type init
-    step3: Now you can use covid19 command in your terminal
+    step2: cd covid19-shell-script
+    step3: Type init
+#### Now you can use covid19 command in your terminal🎉🥳
 
 ### Screenshots
 
