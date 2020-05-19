@@ -42,6 +42,8 @@ states["Sikkim"]=36
 if [ -z $1 ];then
 echo "      COVID19 India
 -----------------------------
+Please make sure you have a stable internet connection
+
 Usage:
     covid19 <command>
     covid19 <options>
@@ -123,6 +125,8 @@ Note: Dadra and Nagar Haveli cases are combined with DamanAndDiu
 elif [ $1 = '-h' ];then
     echo "      COVID19 India
 -----------------------------
+Please make sure you have a stable internet connection
+
 Usage:
     covid19 <command>
     covid19 <options>
