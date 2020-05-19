@@ -10,13 +10,13 @@
 
     Here are some screenshots of the command when used.
 ### $covid19 or $covid19 -h
-![help](https://raw.githubusercontent.com/saisrinivaspaila/covid19-shell-script/master/ScreenShots/covid19Help.png)
+![help](https://user-images.githubusercontent.com/35323355/82280917-a67fb280-99ad-11ea-8112-f5ad612a14f7.png)
 ### $covid19 India
-![India](https://raw.githubusercontent.com/saisrinivaspaila/covid19-shell-script/master/ScreenShots/covid19india.png)
+![India](https://user-images.githubusercontent.com/35323355/82280984-cd3de900-99ad-11ea-8e11-21425687770e.png)
 ### $covid19 AndhraPradesh
-![AP](https://raw.githubusercontent.com/saisrinivaspaila/covid19-shell-script/master/ScreenShots/covidAndhra.png)
+![AP](https://user-images.githubusercontent.com/35323355/82281011-e21a7c80-99ad-11ea-922b-028c8a6268ef.png)
 ### $covid19 -s
-![states](https://raw.githubusercontent.com/saisrinivaspaila/covid19-shell-script/master/ScreenShots/states.png)
+![states](https://user-images.githubusercontent.com/35323355/82281037-f3fc1f80-99ad-11ea-8f7c-dfcf2e745d30.png)
 ### $covid19 -u
-![union](https://raw.githubusercontent.com/saisrinivaspaila/covid19-shell-script/master/ScreenShots/union.png)
+![union](https://user-images.githubusercontent.com/35323355/82281077-0ece9400-99ae-11ea-89d5-49ea7afc97f9.png)
 
