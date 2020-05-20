@@ -4,11 +4,10 @@
 
 ### Procedure
 
-    step1: git clone https://github.com/saisrinivaspaila/covid19-shell-script.git
-    step2: cd covid19-shell-script
-    step3: open powershell with admin rights(Windows) or open terminal(linux or mac) run the below command as root(sudo)
-    step4: Type init
-    step5: close and open new terminal/powershell then run covid19 to confirm your setup
+     Note:-  open powershell with admin rights(Windows) or open terminal(linux or mac) run the below command as root(sudo)
+     git clone https://github.com/saisrinivaspaila/covid19-shell-script.git
+     cd covid19-shell-script
+     ./init
 
 #### Now you can use covid19 command in your terminal🎉🥳
 
