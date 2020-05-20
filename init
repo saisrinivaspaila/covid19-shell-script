@@ -1,22 +1,43 @@
 #!/bin/bash
+#to know your distribution of linux
+lsb_release -d
+reset
 #Debian
 sudo apt-get install jq
+sudo apt-get update
+reset
 #Fedora
 sudo dnf install jq
+sudo dnf upgrade
+sudo dnf clean all
+reset
 #openSUSE
+sudo zypper update
+sudo zypper refresh
 sudo zypper install jq
+reset
 #Arch
+sudo pacman -Syyu
 sudo pacman -S jq
+reset
 #OSX
 brew install jq
 port install jq
+reset
 #FreeBSD
 pkg install jq
 make -C /usr/ports/textproc/jq install clean
+reset
 #Solaris
 pkgutil -i jq
+reset
 #Windows
+choco upgrade all
 chocolatey install jq
+reset
+
+
 mv covid19 $PATH
+reset
 echo "You are good to go"
 covid19
