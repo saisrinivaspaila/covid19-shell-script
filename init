@@ -1,5 +1,22 @@
 #!/bin/bash
+#Debian
+sudo apt-get install jq
+#Fedora
+sudo dnf install jq
+#openSUSE
+sudo zypper install jq
+#Arch
+sudo pacman -S jq
+#OSX
+brew install jq
+port install jq
+#FreeBSD
+pkg install jq
+make -C /usr/ports/textproc/jq install clean
+#Solaris
+pkgutil -i jq
+#Windows
+chocolatey install jq
 mv covid19 $PATH
 echo "You are good to go"
 covid19
-rm -- "$0"
